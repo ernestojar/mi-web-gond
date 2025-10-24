@@ -58,7 +58,11 @@
       height: 300px; /* aumenta el tamaño */
       object-fit: cover; /* recorta sin deformar */  
     }
-
+    @media (max-width: 768px) {
+    .card img {
+    max-height: 250px; /* menos altura en móviles */
+    object-fit: contain; /* no cortar imagen */
+   }
     .card-body {
       text-align: left;
     }
@@ -335,3 +339,4 @@
   <br><br>
 </body>
 </html>
+
