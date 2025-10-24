@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Góndolas y Estantes</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/estilos.css">
+
+  <!-- Bootstrap JS -->
+  <script src="static/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    /* ===== Bloque de presentación ===== */
+    .estantes-banner {
+      background: linear-gradient(90deg, #e5eff8, #ffffff);
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+
+    .estantes-banner__title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0b2140;
+      margin-bottom: 12px;
+    }
+
+    .estantes-banner__text {
+      font-size: 1.05rem;
+      color: #374151;
+      line-height: 1.5;
+    }
+
+    /* ===== Cards de góndolas ===== */
+    .card {
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border: none;
+      border-radius: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+        
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      height: 300px; /* aumenta el tamaño */
+      object-fit: cover; /* recorta sin deformar */  
+    }
+
+    .card-body {
+      text-align: left;
+    }
+
+    /* ===== Responsividad ===== */
+    @media (max-width: 768px) {
+      .estantes-banner {
+        padding: 25px 15px;
+      }
+      .estantes-banner__title {
+        font-size: 1.3rem;
+      }
+      .estantes-banner__text {
+        font-size: 0.95rem;
+      }
+      .card {
+        width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<!-- Botón flotante WhatsApp -->
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/5353740617?text=Hola%20tengo%20interés%20en%20las%20góndolas"
+   target="_blank" rel="noopener noreferrer"
+   class="whatsapp-fab" aria-label="Contactar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.496.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.203-.242-.579-.487-.5-.67-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.099 3.2 5.09 4.487.712.308 1.266.492 1.699.63.714.227 1.364.195 1.877.118.572-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 6.403h-.003a8.894 8.894 0 0 1-4.531-1.235l-.324-.192-3.367.883.898-3.283-.211-.336a8.86 8.86 0 0 1-1.368-4.726c0-4.917 3.993-8.91 8.912-8.91 2.382 0 4.617.928 6.304 2.614a8.9 8.9 0 0 1 2.607 6.296c-.002 4.918-3.995 8.91-8.917 8.91m7.676-16.585A10.671 10.671 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.86 11.86 0 0 0 5.732 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.533-8.392" />
+  </svg>
+</a>
+
+<style>
+  .whatsapp-fab {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    z-index: 9999;
+    transition: transform .12s ease;
+  }
+  .whatsapp-fab:hover {
+    transform: translateY(-4px);
+  }
+</style>
+
+
+<body>
+
+  <!-- Sección de presentación -->
+  <section class="estantes-banner">
+    <h2 class="estantes-banner__title">
+      ¿Buscas equipar tu negocio o tienda con estanterías resistentes y funcionales?
+    </h2>
+    <p class="estantes-banner__text">
+      Nuestras góndolas y estantes están diseñados para optimizar tu espacio, mejorar la exhibición de tus productos y darle una imagen más organizada y atractiva a tu local.
+    </p>
+  </section>
+
+<!-- Reemplaza 573001234567 por tu número (ej: 34123456789 para España sin +) -->
+<!-- Sección de información adicional -->
+<!-- Sección de información adicional con emojis -->
+<section class="estantes-banner">
+  <div class="container">
+    <ul class="info-list">
+      <li>🕒 1. Trabajamos de lunes a sábado.</li>
+      <li>🚚 2. Contamos con servicio de mensajería por un costo adicional.</li>
+      <li>📄 3. Entregamos factura de compra.</li>
+      <li>📦 4. Todos los estantes vienen desarmados en cajas.</li>
+      <li>💵 5. Moneda aceptada: USD, Zelle, tarjeta clásica.</li>
+      <li>📲 6. Contáctanos por WhatsApp:  <a href="https://wa.me/5353740617" target="_blank" rel="noopener noreferrer">+53 5 3740617</a></li>
+  
+    </ul>
+  </div>
+</section>
+
+<style>
+.info-adicional {
+  background-color: #f0f8ff; /* azul muy suave */
+  padding: 30px 20px;
+  margin: 30px auto;
+  border-radius: 10px;
+  max-width: 1000px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.05rem;
+  color: #0b2140;
+  line-height: 1.8;
+}
+
+.info-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #dbe9f7;
+  display: flex;
+  align-items: center;
+}
+
+.info-list li:last-child {
+  border-bottom: none;
+}
+
+.info-list li::before {
+  content: '';
+  margin-right: 10px;
+}
+</style>
+<br><br>
+
+  <!-- Sección de góndolas -->
+  <div class="container text-center">
+
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card">
+          <img src="static/images/Diapositiva1.JPG" class="card-img-top" alt="Góndola 1">
+          <div class="card-body">
+            <br>
+            <h5 class="card-title"><strong>Estante de Almacen</strong></h5>
+            <p class="card-text"> 
+               <p><strong>Alto: 2 m</strong></p> 
+                <p><strong>Profundidad: 60 cm</strong></p>
+                <p><strong>Largo: 1.85 m</strong></p>
+               <p><strong>Capacidad: Soporta 800 kg </strong></p>
+               <p><strong> Precio: 200 USD</strong></p>
+            </p>
+          </div>
+        </div>
+      </div>
+<br>
+      <div class="col-md-6 col-lg-5">
+        <div class="card">
+          <img src="static/images/Diapositiva2.JPG" class="card-img-top" alt="Góndola 2">
+          <div class="card-body">
+            <br>
+             <h5 class="card-title"><strong>Estante para Parlets</strong></h5>
+            <p class="card-text"> 
+               <p><strong>Alto: 3 m</strong></p> 
+                <p><strong>Ancho: 2.5 cm</strong></p>
+                <p><strong>Profundidad: 1 m</strong></p>
+               <p><strong>Capacidad: Soporta 3500 kg (ideal para cargas pesadas)</strong></p>
+               <p><strong> Precio: 450 USD</strong></p>
+            </p>  </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card">
+          <img src="static/images/Diapositiva3.JPG" class="card-img-top" alt="Góndola 3">
+          <div class="card-body">
+           <br>
+            <h5 class="card-title"><strong>Mostrador Comercial</strong></h5>
+            <p class="card-text"> 
+               <p><strong>Alto: 1.2 m</strong></p> 
+                <p><strong>Profundidad: 60 cm</strong></p>
+                <p><strong>Largo: 1.80 m</strong></p>
+                <p><strong> Precio: 1320 USD</strong></p>
+            </p> </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-5">
+        <div class="card">
+          <img src="static/images/Diapositiva4.JPG" class="card-img-top" alt="Góndola 4">
+          <div class="card-body">
+            <br>
+            <h5 class="card-title"><strong>Góndola de pared doble 10 repisas</strong></h5>
+            <p class="card-text"> 
+               <p><strong>Alto: 1.60 m</strong></p> 
+                <p><strong>Profundidad: 45 cm</strong></p>
+                <p><strong>Largo: 1.80 m</strong></p>
+               <p><strong> Precio: 235 USD</strong></p>
+            </p> </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card">
+          <img src="static/images/Diapositiva5.JPG" class="card-img-top" alt="Góndola 5">
+          <div class="card-body">
+           <br>
+            <h5 class="card-title"><strong>Góndola de pared doble 12 repisas</strong></h5>
+            <p class="card-text"> 
+               <p><strong>Alto: 1.80 m</strong></p> 
+                <p><strong>Profundidad: 45 cm</strong></p>
+                <p><strong>Largo: 1.80 m</strong></p>
+               <p><strong> Precio: 245 USD</strong></p>
+            </p> </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-5">
+        <div class="card">
+          <img src="static/images/Diapositiva6.JPG" class="card-img-top" alt="Góndola 6">
+          <div class="card-body">
+            <br>
+            <h5 class="card-title"><strong>Góndola de pared simple 6 repisas</strong></h5>
+            <p class="card-text"> 
+               <p><strong>Alto: 1.80 m</strong></p> 
+                <p><strong>Profundidad: 45 cm</strong></p>
+                <p><strong>Largo: 90 cm</strong></p>
+               <p><strong> Precio: 130 USD</strong></p>
+            </p> </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card">
+          <img src="static/images/Diapositiva7.JPG" class="card-img-top" alt="Góndola 7">
+          <div class="card-body">
+            <br>
+            <h5 class="card-title"><strong>Góndola de pared simple 5 repisas</strong></h5>
+            <p class="card-text"> 
+               <p><strong>Alto: 1.60 m</strong></p> 
+                <p><strong>Profundidad: 45 cm</strong></p>
+                <p><strong>Largo: 90 cm</strong></p>
+               <p><strong> Precio: 120 USD</strong></p>
+            </p> </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-5">
+        <div class="card">
+          <img src="static/images/Diapositiva8.JPG" class="card-img-top" alt="Góndola 8">
+          <div class="card-body">
+            <br>
+            <h5 class="card-title"><strong>Góndola doble cara, 5 repisas por cara, total: 10 repisas.</strong></h5>
+            <p class="card-text"> 
+               <p><strong>Alto: 1.60 m</strong></p> 
+                <p><strong>Profundidad: 45 cm</strong></p>
+                <p><strong>Largo: 90 cm</strong></p>
+               <p><strong> Precio: 195 USD</strong></p>
+            </p> </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card">
+          <img src="static/images/Diapositiva9.JPG" class="card-img-top" alt="Góndola 9">
+          <div class="card-body">
+            <br>
+            <h5 class="card-title"><strong>Cestas para mercado</strong></h5>
+             <p class="card-text"> 
+                <br>
+             <p><strong>Carrito con ruedas 22 USD</strong></p> 
+            <p><strong>Cesta para mercado 15 USD</strong></p> </div>
+        </p> </div>
+      </div>
+    </div>
+
+  </div> <!-- Fin container -->
+
+  <br><br>
+</body>
+</html>
